@@ -1,4 +1,4 @@
-module github.com/google-cloud-functions-go-deploy-test/hello
+module github.com/google-cloud-functions-go-deploy-test/withoutgcloudignore
 
 require (
 	github.com/pkg/errors v0.8.1 // indirect

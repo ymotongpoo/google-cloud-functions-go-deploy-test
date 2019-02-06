@@ -16,4 +16,7 @@
 set -ex
 
 time gcloud functions deploy hello \
-  --entry-point HelloWorld --runtime go111 --trigger-http
+  --entry-point HelloWorld \
+  --runtime go111 \
+  --trigger-http \
+  --verbosity debug

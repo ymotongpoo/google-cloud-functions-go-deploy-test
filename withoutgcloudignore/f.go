@@ -16,8 +16,10 @@ package hello
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
+	"github.com/ymotongpoo/google-cloud-functions-go-deploy-test/withoutgcloudignore/dummy"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -54,6 +56,6 @@ func HelloWorld(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatalf("failed to create logger: %v", err)
 	}
-	logger.Infof("This is test log: %v", r.Header.Get("User-Agent"))
+	logger.Infof("This is test log: random=%v, %v", dummy.MyRandomInt31(), r.Header.Get("User-Agent"))
 	fmt.Fprintf(w, "Hello, World: %v", r.Host)
 }
